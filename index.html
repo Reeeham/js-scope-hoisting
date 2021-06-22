@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Scope, Context, Hoisting</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='scope.js'></script>
+    <script src='context.js'></script>
+</head>
+<body>
+    <h1>Things to Learn to Rule the World</h1>
+    <ul>
+        <li>Learn PHP</li>
+        <li>Learn Laravel</li>
+        <li>Learn JavaScript</li>
+        <li>Learn VueJS</li>
+        <li>Learn CLI</li>
+        <li>Learn Git</li>
+        <li>Learn Astral Projection</li>
+    </ul>
+    <script>
+        // Saves a NodeList of all list items on the page in listItems
+        var listItems = document.querySelectorAll('ul li');
+        // Loops through each of the Node in the listItems NodeList and logs its content
+        for (var i = 0; i < listItems.length; i++) {
+          (function () {
+            console.log(this.innerHTML);
+          }).call(listItems[i]);
+        }
+
+        // Output logs:
+        // Learn PHP
+        // Learn Laravel
+        // Learn JavaScript
+        // Learn VueJS
+        // Learn CLI
+        // Learn Git
+        // Learn Astral Projection
+    </script>
+</body>
+</html>
